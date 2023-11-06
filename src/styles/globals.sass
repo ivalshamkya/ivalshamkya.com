@@ -1,0 +1,44 @@
+// vars
+$bodyBg: #141414b9
+$color1: #333333b9
+$color2: #999999b9
+$color3: #6D1995b9
+$color4: #4FBBDDb9
+$color5: #84991Cb9
+
+ul#elements
+  li
+    list-style: none
+    position: absolute
+    transition: .1s
+    
+@for $i from 1 through 14
+  li:nth-child(n + #{$i})
+    opacity: (random(4) * 0.2) + 0.2 
+    left: random(60) + 50 + vw
+    top: random(50) + 50 + vh
+    font-size: 16 + random(16) + px
+    -webkit-animation-name: animate#{$i}
+    -webkit-animation-duration: $i*1.8+s
+    animation-name: animate#{$i}
+    animation-duration: $i*1.8+s
+    animation-iteration-count: infinite
+
+@for $i from 1 through 14
+  @keyframes animate#{$i}
+      0%
+        color: $color1
+      25%
+        color: $color2
+        transform: rotate(random($i)*(-1)*1+deg) scale(0.3+$i*0.1) translateY((random(20))+px) translateX(random(20)+px)
+        opacity: random(10) * 0.1
+      50%
+        color: $color3
+        transform: rotate(random($i)*(-1)*1+deg) scale(0.3+$i*0.1) translateY((random(20))+px) translateX(random(20)+px)
+        opacity: random(10) * 0.1
+      75%
+        color: $color4
+        transform: rotate(random($i)*2+deg) scale(0.2+$i*0.1) translateY((random(30))+px) translateX(random(30)+px)
+        opacity: random(10) * 0.1
+      100%
+        color: $color5
