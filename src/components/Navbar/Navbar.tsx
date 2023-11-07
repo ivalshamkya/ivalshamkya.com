@@ -73,7 +73,7 @@ const Navbar: React.FC<Navigation> = ({ active }) => {
           onClick={handleClick}
           className={`w-10 md:w-12 h-10 md:h-12 flex border border-gray-300 dark:border-white/20 shadow-inner ${
             theme !== "light"
-              ? "opacity-70 rotate-180 bg-slate-950 text-white border border-white/70"
+              ? "opacity-70 rotate-180 dark:bg-[#212121] text-white border border-white/70"
               : "opacity-70 rotate-0 text-slate-950 bg-white/70"
           } justify-center items-center text-center text-2xl text-primary backdrop-blur-sm drop-shadow-sm bg-gradient-to-br rounded-full hover:opacity-80 hover:drop-shadow-lg transition-all ease-in duration-200 font-semibold cursor-pointer`}
         >

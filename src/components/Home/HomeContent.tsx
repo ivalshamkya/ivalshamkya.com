@@ -1,5 +1,6 @@
 import { METADATA } from "@/common/constant/me";
-import { motion, LazyMotion, domAnimation, m } from "framer-motion";
+import { motion, LazyMotion, domAnimation, m, animate } from "framer-motion";
+import SkillList from "./Skills/SkillList";
 
 const HomeContent = () => {
   const navbarVariants = {
@@ -28,7 +29,7 @@ const HomeContent = () => {
         initial="hidden"
         variants={navbarVariants}
         animate="visible"
-        className="max-w-3xl space-y-12 md:space-y-20 px-6"
+        className="max-w-3xl overflow-x-hidden space-y-12 md:space-y-20 px-6"
       >
         <m.div
           className="flex flex-col-reverse md:grid grid-cols-3 gap-3"
@@ -64,12 +65,17 @@ const HomeContent = () => {
           </m.div>
         </m.div>
 
-        <m.div layout>
+        <m.div className="overflow-hidden">
           <h1 className="text-2xl font-bold mb-4">Favorite Things</h1>
-          <p>
+          <p className="mb-4">
             I love exploring new libraries, frameworks and programing languages.
             Here is a list of technologies that I have worked with.
           </p>
+          <m.div
+          className="mb-4"
+          >
+            <SkillList />
+          </m.div>
         </m.div>
       </m.div>
     </LazyMotion>
