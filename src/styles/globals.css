@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  body * {
+    @apply transition-colors duration-50;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.scroll-horizontal {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100vw;
+  height: 100vh;
+}
+
+.scroll-vertical {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page {
+  scroll-snap-align: center;
+  padding: 1.25rem;
+}
+
+.animate-wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.animate-mouse-x {
+  animation-name: mouse-x-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+.animate-mouse-y {
+  animation-name: mouse-y-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes mouse-x-animation {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(-25%) }
+  50% { transform: translateX(0) }
+  75% { transform: translateX(25%) }
+  100% { transform: translateX(0%) }
+}
+
+@keyframes mouse-y-animation {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(40%) }
+  100% { transform: translateY(0%) }
+}
+
+.icon-3d {
+  background: linear-gradient(145deg, #f0f0f0, #d1d1d1);
+}
+
+.icon-3d:hover {
+  animation-name: shake-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: 1;  /* Never stop waving :) */
+  transform-origin: 50% 50%;       /* Pivot around the bottom-left palm */
+}
+
+@keyframes shake-animation {
+  0% { transform: rotate( 0.0deg) }
+ 10% { transform: rotate(50.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+ 20% { transform: rotate(35.0deg) }
+ 30% { transform: rotate(-35.0deg) }
+ 40% { transform: rotate(20.0deg) }
+ 50% { transform: rotate(-10.0deg) }
+ 60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+100% { transform: rotate( 0.0deg) }
+}
+
+.animate-spin-2 {
+  animation-name: spin;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(0.7) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(360deg);
+  }
+  100% {
+    transform: scale(0.7) rotate(0deg);
+  }
+}
+
+
+.animate-rocket:hover {
+  animation-name: rocket;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  transition: all linear 0.05s;
+  cursor: pointer;
+}
+
+@keyframes rocket {
+  0% {
+    opacity: 0.7;
+  }
+  14% {
+    transform: translateX(5%);
+  }
+  18% {
+    transform: translateX(-5%);
+  }
+  22% {
+    transform: translateX(5%);
+  }
+  26% {
+    transform: translateX(-5%);
+  }
+  30% {
+    transform: translateX(5%);
+  }
+  34% {
+    transform: translateX(-5%);
+  }
+  38% {
+    transform: translateX(5%);
+  }
+  70% {
+    transform: translateY(-50%) translateX(50%) rotate(-20deg);
+  }
+  100% {
+    transform: translateY(-1000%) translateX(1000%) rotate(-20deg);
+  }
+}
+
+.radial-pattern {
+  background-color: #ffffff;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 39px ), repeating-linear-gradient( #6b3dff55, #6b3dff );
+}
+
+.polka-pattern {
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.5px, #e7e7fe 0.5px);
+  background-size: 10px 10px;
+}
+
+.dot-cross-pattern {
+  background: radial-gradient(circle at top left,transparent 9%, #444cf7 10% ,#444cf7 15% , transparent 16%) , radial-gradient(circle at bottom left,transparent 9%, #444cf7 10% ,#444cf7 15% , transparent 16%), radial-gradient(circle at top right ,transparent 9%, #444cf7 10% ,#444cf7 15% , transparent 16%) , radial-gradient(circle at bottom right,transparent 9%, #444cf7 10% ,#444cf7 15% , transparent 16%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(45deg, transparent 46%, #444cf7 47%, #444cf7 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #444cf7 47%, #444cf7 52%, transparent 53%);
+  background-size: 3em 3em;
+  opacity: 0.8;
+}
+
+.cross-pattern {
+  opacity: 0.8;
+  background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#444cf7 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #444cf7 2px, #e5e5f7 2px) -1px 0;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+
+.slash-pattern {
+  background: linear-gradient(45deg, transparent 49%, #4f46e4 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, #4f46e4 49% 51%, transparent 51%);
+  background-size: 3em 3em;
+  opacity: 0.8;
+}
+
+.dot-x-pattern {
+  background: radial-gradient(#e2e0ff 15%, transparent 16%), linear-gradient(45deg, transparent 49%, #e2e0ff 49% 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #e2e0ff 49% 51%, transparent 51%);
+  background-size: 3em 3em;
+  background-color: #ffffff;
+}

@@ -1,0 +1,78 @@
+---
+const { title, url } = Astro.props;
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import { SEO } from "astro-seo";
+
+import {METADATA} from "@/common/constant/me";
+
+---
+
+<html lang="en">
+  <head>
+    <SEO
+      title={title}
+      description={METADATA.description}
+      openGraph={{
+        basic: {
+          title: METADATA.creator + " - Frontend Engineer",
+          type: "website",
+          image:
+            METADATA.profile
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/images/logo.ico" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content:
+              METADATA.profile
+          },
+          {
+            name: "twitter:title",
+            content: METADATA.creator + " - Frontend Engineer",
+          },
+          {
+            name: "twitter:description",
+            content:
+              METADATA.description,
+          },
+        ],
+      }}
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta title={title} />
+    <link rel="icon" type="image/x-icon" href={METADATA.profile} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark:bg-zinc-900 bg-zinc-100 antialiased selection:bg-teal-300 selection:text-zinc-900 dark:selection:bg-teal-600 dark:selection:text-white py-10 2xl:text-lg font-inter">
+    <Navbar client:load active={new URL(Astro.request.url).pathname}/>
+    <slot />
+    <Footer client:load />
+  </body>
+</html>
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
