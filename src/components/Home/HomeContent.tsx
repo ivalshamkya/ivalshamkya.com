@@ -8,7 +8,7 @@ const HomeContent = () => {
       filter: "blur(3px)",
       y: 70,
       transition: {
-        duration: 0.5
+        duration: 0.5,
       },
     },
     visible: {
@@ -17,7 +17,7 @@ const HomeContent = () => {
       y: 0,
       transition: {
         ease: "anticipate",
-        duration: 0.7
+        duration: 0.7,
       },
     },
   };
@@ -39,17 +39,20 @@ const HomeContent = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b52ff] to-pink-500">
                 Hello
               </span>{" "}
-                it's me{" "}
-              <div className="text-3xl ml-1.5 animate-wave">👋</div>
+              it's me <div className="text-3xl ml-1.5 animate-wave">👋</div>
             </h2>
-            <h1 className="text-4xl font-extrabold mb-1.5">{METADATA.authors.name}</h1>
-            <p className="mb-4">
+            <h1 className="text-4xl font-extrabold mb-1.5">
+              {METADATA.authors.name}.
+            </h1>
+            {/* <p className="mb-4">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            </p>
+            </p> */}
             <p className="">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam,
-              quae illum? Molestiae nisi repellendus incidunt est ab commodi totam
-              minus, ad magni eligendi.
+              Welcome to my corner of the web, a digital space where I share my
+              thoughts, experiences, and insights on software engineering and
+              technology. In my free time, I build coding tutorials and
+              experiment with new web app technologies. Also, your comments,
+              questions, and shared experiences are always welcome here.
             </p>
           </m.div>
           <m.div className="order-2 md:order-1" layout>
@@ -64,10 +67,8 @@ const HomeContent = () => {
         <m.div layout>
           <h1 className="text-2xl font-bold mb-4">Favorite Things</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error,
-            blanditiis reprehenderit? Soluta quaerat pariatur magni error ut quas
-            illo recusandae quis neque unde facilis, accusantium numquam nam sit
-            eaque nulla?
+            I love exploring new libraries, frameworks and programing languages.
+            Here is a list of technologies that I have worked with.
           </p>
         </m.div>
       </m.div>
