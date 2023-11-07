@@ -16,7 +16,7 @@ const SkillList = () => {
       {Array.from({ length: 2 }, (_, index) => {
           const slider = [...stacksInArray].sort(() => Math.random() - 0.5)
           return (
-            <Marquee key={index} direction={index % 2 === 0 ? 'left' : 'right'}>
+            <Marquee key={index} direction={index % 2 === 0 ? 'right' : 'left'}>
               {slider.map(([name, icon], index) => (
                 <SkillCard key={index} name={name} icon={icon} />
               ))}

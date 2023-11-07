@@ -8,7 +8,7 @@ interface MarqueeProps {
 
 export default function Marquee({ children, direction = 'left' }: MarqueeProps) {
   return (
-    <MarQuee direction={direction} speed={46} className="py-2 h-auto">
+    <MarQuee direction={direction} speed={30} className="py-2 h-auto">
       {children}
     </MarQuee>
   )

@@ -36,11 +36,14 @@ const HomeContent = () => {
           layout
         >
           <m.div className="col-span-2 order-2 md:order-1">
-            <h2 className="text-primary font-bold md:text-2xl text-xl mb-1.5">
+            <h2 className="font-bold md:text-2xl text-xl mb-1.5">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b52ff] to-pink-500">
                 Hello
-              </span>{" "}
+              </span>
+              {" "}
+              <span className="text-primary">
               it's me <div className="text-3xl ml-1.5 animate-wave">👋</div>
+              </span>
             </h2>
             <h1 className="text-4xl font-extrabold mb-1.5">
               {METADATA.authors.name}.

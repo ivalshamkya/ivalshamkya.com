@@ -59,8 +59,8 @@ const Navbar: React.FC<Navigation> = ({ active }) => {
               <motion.a
                 href={`${navigate_url}`}
                 key={`${navigate}`}
-                className={`w-[4.5rem] md:w-32 py-2.5 md:py-3 text-xs md:text-base text-center text-primary bg-gradient-to-l rounded-full transition-all ease-in duration-75 cursor-pointer ${
-                  active === navigate_url ? "text-[#f853d2] font-bold" : "hover:text-white hover:from-[#3b52ff] hover:to-[#aa00c0] font-medium"
+                className={`w-[4.5rem] md:w-32 py-2.5 md:py-3 text-xs md:text-base text-center text-primary bg-gradient-to-r rounded-full transition-all ease-in duration-75 cursor-pointer ${
+                  active === navigate_url ? "text-white from-[#3b52ff] to-[#aa00c0] font-bold" : "text-primary hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#3b52ff] hover:to-[#aa00c0] font-medium"
                 }`}
               >
                 {navigate}
