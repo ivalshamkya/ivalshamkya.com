@@ -69,7 +69,6 @@ const Navbar: React.FC<Navigation> = ({ active }) => {
           </motion.ul>
         </motion.div>
         <motion.button
-          key={"adfw"}
           onClick={handleClick}
           className={`w-10 md:w-12 h-10 md:h-12 flex border border-gray-300 dark:border-white/20 shadow-inner ${
             theme !== "light"

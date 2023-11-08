@@ -17,14 +17,9 @@ import {METADATA} from "@/common/constant/me";
         basic: {
           title: METADATA.creator + " - Frontend Engineer",
           type: "website",
-          image: METADATA.profile,
-          url: METADATA.openGraph.url,
+          image:
+            METADATA.profile
         },
-        optional: {
-          description: METADATA.description,
-          locale: METADATA.openGraph.locale,
-          siteName: METADATA.openGraph.siteName
-        }
       }}
       extend={{
         link: [{ rel: "icon", href: "/images/logo.ico" }],
@@ -43,14 +38,6 @@ import {METADATA} from "@/common/constant/me";
             content:
               METADATA.description,
           },
-          {
-            name: "twitter:url",
-            content: METADATA.openGraph.url
-          },
-          {
-            name: "twitter:card",
-            content: "summary_large_image"
-          }
         ],
       }}
     />
@@ -66,7 +53,7 @@ import {METADATA} from "@/common/constant/me";
     />
   </head>
   <body class="dark:bg-zinc-900 bg-zinc-100 antialiased selection:bg-teal-300 selection:text-zinc-900 dark:selection:bg-teal-600 dark:selection:text-white py-10 2xl:text-lg font-inter">
-    <Navbar client:load active={new URL(Astro.request.url).pathname}/>
+    <!-- <Navbar client:load active={new URL(Astro.request.url).pathname}/> -->
     <slot />
     <!-- <Footer client:load /> -->
   </body>
