@@ -1,0 +1,19 @@
+---
+import { default as Layout } from "@/layouts/404.astro";
+import "@/styles/globals.css";
+import "@/styles/globals.sass";
+import {Button} from "@/components/ui/button"
+---
+
+<Layout title="Ival Shamkya">
+  <main class="flex flex-col justify-center items-center space-y-4 p-5 text-primary mt-[15%] md:mt-[7%]">
+    <h1 class="font-poppins text-[5rem] md:text-[7.7rem] font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#3948ec] to-[#aa00c0]">404</h1>
+    <h1 class="text-center text-4xl md:text-5xl font-bold mb-5">Why am i here?</h1>
+    <h1 class="text-center text-sm md:text-lg">It seems like the page that you are looking for is no longer here.</h1>
+    <div>
+      <a href="/">
+        <Button color="destructive">Take me home</Button>
+      </a>
+    </div>
+  </main>
+</Layout>
