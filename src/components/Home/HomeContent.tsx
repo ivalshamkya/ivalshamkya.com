@@ -1,4 +1,4 @@
-import { METADATA } from "@/common/constant/me";
+import { METADATA } from "@/common/constant/metadata";
 import { motion, LazyMotion, domAnimation, m, animate } from "framer-motion";
 import SkillList from "./Skills/SkillList";
 
@@ -69,7 +69,7 @@ const HomeContent = () => {
         </m.div>
 
         <m.div className="overflow-hidden">
-          <h1 className="text-2xl font-bold mb-4">Favorite Things</h1>
+          <h1 className="text-2xl font-bold mb-2">Favorite Things</h1>
           <p className="mb-4">
             I love exploring new libraries, frameworks and programing languages.
             Here is a list of technologies that I have worked with.

@@ -1,0 +1,109 @@
+---
+import Layout from "./Layout.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { METADATA } from "@/common/constant/metadata";
+import { SOCIALS } from "@/common/constant/socials";
+import { formatISODate } from "@/utils/formatDate";
+import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  publishedDate: Date;
+  url: string;
+  updatedDate: Date | undefined;
+}
+
+const { title, description, image, imageAlt, publishedDate, url, updatedDate } =
+  Astro.props;
+
+const ogImage = {
+  src: `/image/${url}.png`,
+  alt: title,
+};
+
+const fullpublishedDate = publishedDate.toLocaleDateString("en", {
+  dateStyle: "full",
+});
+
+const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  publishedDate={updatedDate ?? publishedDate}
+>
+  <main class="rounded mt-[15%] md:mt-[17%] px-5">
+    <header class="flex flex-col mb-8">
+      <a
+        href="/blog"
+        class="group w-fit inline-flex items-center font-medium mb-7"
+        ><BsChevronLeft /><span
+          class="group-hover:underline tracking-wide px-0.5">Back</span
+        ></a
+      >
+      <h1
+        class="text-2xl md:text-5xl pb-4 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3b52ff] to-pink-500"
+      >
+        {title}
+      </h1>
+      <div class="inline-flex items-center space-x-1 mb-8">
+        <div class="inline-flex gap-2 justify-center items-center">
+          <div class="aspect-square rounded-full overflow-hidden">
+            <Image
+              src={METADATA.profile}
+              alt="Image of the author"
+              loading="eager"
+              class="aspect-square w-7"
+              width={70}
+              height={70}
+            />
+          </div>
+          <p class="dark:text-zinc-400 text-zinc-700 text-base">
+            <span class="block font-semibold">{METADATA.authors.name}</span>
+          </p>
+        </div>
+        <span> ·</span>
+        <time
+          datetime={formatISODate(publishedDate)}
+          class="block text-center dark:text-zinc-400 text-zinc-600 text-sm sm:text-base"
+        >
+          {formatISODate(publishedDate)}
+        </time>
+      </div>
+      <div class="group w-[1200] h-[630] overflow-hidden rounded-xl">
+        <Image
+          src={image}
+          alt={imageAlt}
+          loading="eager"
+          class="group-hover:scale-[1.03] transition-all duration-700"
+          width={1200}
+          height={630}
+        />
+      </div>
+    </header>
+    {
+      updatedDate && (
+        <article class="dark:text-blue-300 py-2 px-4 mb-6 rounded-md text-sm sm:text-base border border-blue-400 transition-all bg-blue-600/20">
+          <span class="font-semibold">Last updated: </span>
+          {fullUpdatedDate}
+        </article>
+      )
+    }
+    <article
+      class="prose dark:prose-invert lg:prose-base dark:prose-code:text-zinc-50 dark:prose-a:text-blue-400 prose-a:text-blue-600 max-w-none hover:prose-a:underline focus:prose-a:underline prose-a:no-underline prose-headings:text-transparent prose-headings:bg-clip-text prose-headings:bg-gradient-to-l dark:prose-headings:bg-gradient-to-r prose-headings:from-[#3b52ff] prose-headings:to-pink-500 prose-img:rounded-xl"
+    >
+      <slot />
+    </article>
+  </main>
+  <!-- <Pagination /> -->
+</Layout>
