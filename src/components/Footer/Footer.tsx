@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView, useTime, useTransform } from "framer-motion";
 
-import { METADATA } from "@/common/constant/me";
+import { METADATA } from "@/common/constant/metadata";
 
 const Footer: React.FC = () => {
 

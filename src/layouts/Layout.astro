@@ -1,11 +1,27 @@
 ---
-const { title, url } = Astro.props;
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { SEO } from "astro-seo";
 
-import {METADATA} from "@/common/constant/me";
+import { METADATA } from "@/common/constant/metadata";
+const ogImageURL = new URL(METADATA.profile, Astro.site).href;
 
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: {
+    src: string;
+    alt: string;
+  };
+  publishedDate?: Date;
+}
+
+const {
+  title = (METADATA.authors.name + METADATA.exTitle),
+  description = METADATA.description,
+  ogImage = ogImageURL,
+  publishedDate,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -15,7 +31,7 @@ import {METADATA} from "@/common/constant/me";
       description={METADATA.description}
       openGraph={{
         basic: {
-          title: METADATA.creator + " - Frontend Engineer",
+          title: METADATA.creator,
           type: "website",
           image: METADATA.profile,
           url: METADATA.openGraph.url,
@@ -23,20 +39,19 @@ import {METADATA} from "@/common/constant/me";
         optional: {
           description: METADATA.description,
           locale: METADATA.openGraph.locale,
-          siteName: METADATA.openGraph.siteName
-        }
+          siteName: METADATA.openGraph.siteName,
+        },
       }}
       extend={{
-        link: [{ rel: "icon", href: "/images/logo.ico" }],
+        link: [{ rel: "icon", href: ogImageURL }],
         meta: [
           {
             name: "twitter:image",
-            content:
-              METADATA.profile
+            content: "https://www.kevinzunigacuellar.com/static/banner.png"
           },
           {
             name: "twitter:title",
-            content: METADATA.creator + " - Frontend Engineer",
+            content: METADATA.creator,
           },
           {
             name: "twitter:description",
@@ -50,13 +65,28 @@ import {METADATA} from "@/common/constant/me";
           {
             name: "twitter:card",
             content: "summary_large_image"
+          },
+          {
+            name: "twitter:site",
+            content: METADATA.openGraph.siteName
           }
         ],
       }}
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content={METADATA.authors.name} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="follow, index" />
     <meta title={title} />
+    {
+      publishedDate && (
+        <meta
+          property="article:published_time"
+          content={publishedDate.toISOString()}
+        />
+      )
+    }
     <link rel="icon" type="image/x-icon" href={METADATA.profile} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -65,9 +95,13 @@ import {METADATA} from "@/common/constant/me";
       rel="stylesheet"
     />
   </head>
-  <body class="dark:bg-zinc-900 bg-zinc-100 antialiased selection:bg-teal-300 selection:text-zinc-900 dark:selection:bg-teal-600 dark:selection:text-white py-10 2xl:text-lg font-inter">
-    <Navbar client:load active={new URL(Astro.request.url).pathname}/>
-    <slot />
+  <body class="dark:bg-zinc-900 bg-zinc-100 antialiased selection:bg-blue-300 selection:text-zinc-900 dark:selection:bg-blue-500 dark:selection:text-white py-10 2xl:text-lg font-inter">
+    <Navbar client:load active={new URL(Astro.request.url).pathname.split('/')[1]}/>
+    <main class="flex justify-center">
+      <section class="w-full md:max-w-3xl">
+        <slot />
+      </section>
+    </main>
     <!-- <Footer client:load /> -->
   </body>
 </html>

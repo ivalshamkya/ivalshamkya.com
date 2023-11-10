@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import BlogContent from "./BlogContent";
+
+const blogData = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
+);
+
+const posts = blogData.map((post) => {
+  return { data: post.data, slug: post.slug};
+});
+
+---
+
+<section id="blog">
+  <BlogContent posts={posts} client:load />
+</section>
