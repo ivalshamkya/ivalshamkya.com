@@ -5,7 +5,7 @@ import {
   SiCodeigniter,
   SiCss3,
   SiDjango,
-  SiExpo,
+  SiAstro,
   SiExpress,
   SiFirebase,
   SiFlask,
@@ -26,10 +26,7 @@ import {
   SiPycharm,
   SiPython,
   SiReact,
-  SiReacthookform,
   SiReactquery,
-  SiReactrouter,
-  SiReacttable,
   SiRedux,
   SiSass,
   SiStorybook,
@@ -55,6 +52,7 @@ export const STACKS: stacksProps = {
   TypeScript: <SiTypescript size={iconSize} className="text-blue-400" />,
   "Next.js": <SiNextdotjs size={iconSize} className="text-primary" />,
   "React.js": <SiReact size={iconSize} className="text-sky-500" />,
+  "Astro.js": <SiAstro size={iconSize} className="text-primary" />,
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
   Bootstrap: (
     <BsFillBootstrapFill size={iconSize} className="text-purple-500" />
