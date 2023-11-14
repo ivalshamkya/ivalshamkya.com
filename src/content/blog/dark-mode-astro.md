@@ -6,6 +6,7 @@ updatedDate: 2023-06-04
 hero: "/heros/dark-mode-astro.png"
 heroAlt: "The logo of Astro and Tailwind CSS"
 tools: ["TailwindCSS", "Astro.js"]
+tags: ["programming", "astrojs", "tailwinds", "darkmode"]
 ---
 
 Adding a dark mode to your website is a great way to improve accessibility. In this guide, we will learn how to implement a perfect dark mode in your Astro project using Tailwind CSS. You can use any framework you prefer, but we will be using Preact for the UI creation.
