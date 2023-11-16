@@ -1,0 +1,35 @@
+---
+import { METADATA } from "@/common/constant/metadata";
+import { SOCIALS } from "@/common/constant/socials";
+import { SiGithub, SiLinkedin, SiTiktok } from "react-icons/si";
+const year = new Date().getFullYear().toString();
+---
+
+<footer class="w-full py-2 mt-20 flex justify-between items-center">
+  <div>
+    <div class="flex items-center gap-1 text-sm py-1 text-neutral-600 dark:text-neutral-400 font-sora">
+      <span>©</span>
+      <span>{new Date().getFullYear()}</span>
+      <span>with</span>
+      <div class="relative inline-flex justify-center items-center">
+        <div class="text-red-500 rounded-full">❤️</div>
+        <div class="text-red-500 absolute top-0 left-0 animate-ping">❤️</div>
+        <div class="text-red-500 absolute top-0 left-0 animate-pulse">❤️</div>
+      </div>
+      <span>by</span>
+      <span class="hover:dark:text-neutral-400 cursor-pointer">{METADATA.authors.name}</span>
+    </div>
+  </div>
+
+  <div class="flex gap-4 items-center">
+    <a href={SOCIALS['github'].url} class="group">
+      <SiGithub size={20} className="text-primary opacity-50 group-hover:opacity-100 transition-all ease-linear duration-100" />
+    </a>
+    <a href={SOCIALS['linkedin'].url} class="group">
+      <SiLinkedin size={20} className="text-primary opacity-50 group-hover:opacity-100 group-hover:text-[#0077B5] transition-all ease-linear duration-100" />
+    </a>
+    <a href={SOCIALS['tiktok'].url} class="group">
+      <SiTiktok size={20} className="text-primary opacity-50 group-hover:opacity-100 transition-all ease-linear duration-100" />
+    </a>
+  </div>
+</footer>

@@ -1,10 +1,10 @@
 ---
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/Footer/Footer.astro";
 import { SEO } from "astro-seo";
 
 import { METADATA } from "@/common/constant/metadata";
-const ogImageURL = new URL(METADATA.profile, Astro.site).href;
+const ogImageURL = new URL(METADATA.openGraph.img, Astro.site).href;
 
 interface Props {
   title?: string;
@@ -33,7 +33,7 @@ const {
         basic: {
           title: METADATA.creator,
           type: "website",
-          image: METADATA.profile,
+          image: METADATA.openGraph.img,
           url: METADATA.openGraph.url,
         },
         optional: {
@@ -47,7 +47,7 @@ const {
         meta: [
           {
             name: "twitter:image",
-            content: "https://www.kevinzunigacuellar.com/static/banner.png"
+            content: METADATA.openGraph.img
           },
           {
             name: "twitter:title",
@@ -87,7 +87,7 @@ const {
         />
       )
     }
-    <link rel="icon" type="image/x-icon" href={METADATA.profile} />
+    <link rel="icon" type="image/x-icon" href={METADATA.profile.icon} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -95,14 +95,14 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body class="dark:bg-zinc-900 bg-zinc-100 antialiased selection:bg-blue-300 selection:text-zinc-900 dark:selection:bg-blue-500 dark:selection:text-white py-10 2xl:text-lg font-inter">
+  <body class="dark:bg-zinc-900 bg-zinc-100 antialiased selection:bg-blue-300 selection:text-zinc-900 dark:selection:bg-blue-500 dark:selection:text-white pt-10 pb-0 2xl:text-lg font-inter">
     <Navbar client:load active={new URL(Astro.request.url).pathname.split('/')[1]}/>
     <main class="flex justify-center">
-      <section class="w-full md:max-w-3xl">
+      <section class="w-full min-h-screen md:max-w-3xl">
         <slot />
+        <Footer />
       </section>
     </main>
-    <!-- <Footer client:load /> -->
   </body>
 </html>
 <script is:inline>
