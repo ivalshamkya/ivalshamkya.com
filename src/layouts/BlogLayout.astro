@@ -6,6 +6,7 @@ import { METADATA } from "@/common/constant/metadata";
 import { SOCIALS } from "@/common/constant/socials";
 import { formatISODate } from "@/utils/formatDate";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
+import Pagination from "@/components/Pagination/Pagination.astro";
 
 interface Props {
   title: string;
@@ -15,9 +16,10 @@ interface Props {
   publishedDate: Date;
   url: string;
   updatedDate: Date | undefined;
+  tags: [];
 }
 
-const { title, description, image, imageAlt, publishedDate, url, updatedDate } =
+const { title, description, image, imageAlt, publishedDate, url, updatedDate, tags } =
   Astro.props;
 
 const ogImage = {
@@ -46,9 +48,9 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     <header class="flex flex-col mb-8">
       <a
         href="/blog"
-        class="group w-fit inline-flex items-center font-medium mb-7"
+        class="group w-fit inline-flex items-center font-medium mb-7 md:text-lg"
         ><BsChevronLeft /><span
-          class="group-hover:underline tracking-wide px-0.5">Back</span
+          class="tracking-wide px-0 group-hover:underline group-hover:px-1 transition-all ease-linear duration-150">Back</span
         ></a
       >
       <h1
@@ -60,7 +62,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
         <div class="inline-flex gap-2 justify-center items-center">
           <div class="aspect-square rounded-full overflow-hidden">
             <Image
-              src={METADATA.profile}
+              src={METADATA.profile.img}
               alt="Image of the author"
               loading="eager"
               class="aspect-square w-7"
@@ -105,5 +107,23 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
       <slot />
     </article>
   </main>
-  <!-- <Pagination /> -->
+
+  <div class="my-10">
+    <h1 class="mb-3 font-medium text-lg">Tags:</h1>
+    <div class="flex gap-2">
+    {tags.map(tag => (
+      <div class="py-1.5 px-2.5 text-xs text-center rounded-full font-medium border bg-zinc-200 dark:bg-zinc-700">
+        {tag}  
+      </div>
+    ))}
+    </div>
+  </div>
+
+  <div class="my-10">
+    <div class="flex items-center whitespace-nowrap gap-2 mb-3 font-medium text-lg">
+      More Article
+      <div class="w-full h-[1px] bg-zinc-300"></div>
+    </div>
+    <Pagination />
+  </div>
 </Layout>

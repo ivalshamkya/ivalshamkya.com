@@ -29,7 +29,7 @@ const HomeContent = () => {
         initial="hidden"
         variants={navbarVariants}
         animate="visible"
-        className="max-w-3xl overflow-x-hidden space-y-12 md:space-y-20 px-6"
+        className="max-w-3xl overflow-x-hidden space-y-12 md:space-y-20 px-6 py-4"
       >
         <m.div
           className="flex flex-col-reverse md:grid grid-cols-3 gap-3"
@@ -61,7 +61,7 @@ const HomeContent = () => {
           </m.div>
           <m.div className="order-2 md:order-1" layout>
             <img
-              src="https://iconicentertainment.in/wp-content/uploads/2013/11/dummy-image-square.jpg"
+              src={METADATA.profile.img}
               className="md:ml-auto shadow rounded-full w-36 md:w-48"
               alt="profileImage"
             />
