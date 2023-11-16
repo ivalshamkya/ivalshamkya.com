@@ -1,8 +1,8 @@
 ---
 title: Add dark mode to Astro with Tailwind CSS
 description: In this guide, you will learn how to add perfect dark mode to your Astro project using Tailwind CSS and the prefers-color-scheme media query
-publishedDate: 2022-05-04
-updatedDate: 2023-06-04
+publishedDate: 2023-10-30
+updatedDate: 2023-10-30
 hero: "/heros/dark-mode-astro.png"
 heroAlt: "The logo of Astro and Tailwind CSS"
 tools: ["TailwindCSS", "Astro.js"]
