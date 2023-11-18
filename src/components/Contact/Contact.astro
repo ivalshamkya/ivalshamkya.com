@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import {
+  SiGithub,
+  SiInstagram,
+  SiLinkedin,
+  SiTiktok,
+  SiTwitter,
+  SiX,
+} from "react-icons/si";
+import { SOCIALS } from "@/common/constant/socials";
+---
+
+<section id="contact">
+  <div class="max-w-3xl p-5">
+    <div class="mb-10">
+      <h1 class="text-4xl font-bold mb-3">Contact</h1>
+      <p class="text-zinc-700 dark:text-zinc-400 pr-20 md:pr-24">
+        Let's get in touch with me.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+      <a
+        href={SOCIALS["github"].url}
+        class="w-full p-2 inline-flex justify-center items-center gap-2 text-white text-sm bg-gradient-to-br from-slate-700 to-[#16202d] rounded-lg group-hover:opacity-100 transition-all ease-linear duration-100"
+      >
+        <SiGithub size={20} /> Github
+      </a>
+      <a
+        href={SOCIALS["linkedin"].url}
+        class="w-full p-2 inline-flex justify-center items-center gap-2 text-white text-sm bg-gradient-to-br from-[#0077B5] to-[#00507b] rounded-lg group-hover:opacity-100 transition-all ease-linear duration-100"
+      >
+        <SiLinkedin size={20} /> LinkedIn
+      </a>
+      <a
+        href={SOCIALS["instagram"].url}
+        class="w-full p-2 inline-flex justify-center items-center gap-2 text-white text-sm bg-gradient-to-br from-indigo-600 via-pink-600 to-yellow-400 rounded-lg group-hover:opacity-100 transition-all ease-linear duration-100"
+      >
+        <SiInstagram size={20} /> Instagram
+      </a>
+      <a
+        href={SOCIALS["twitter"].url}
+        class="w-full p-2 inline-flex justify-center items-center gap-2 text-white text-sm bg-gradient-to-br from-[#30a5ff] to-[#0c60a5] rounded-lg group-hover:opacity-100 transition-all ease-linear duration-100"
+      >
+        <SiTwitter size={20} /> Twitter
+      </a>
+      <a
+        href={SOCIALS["tiktok"].url}
+        class="w-full p-2 inline-flex justify-center items-center gap-2 text-white text-sm bg-gradient-to-br from-gray-900 to-[#080808] rounded-lg group-hover:opacity-100 transition-all ease-linear duration-100"
+      >
+        <SiTiktok size={20} /> Tiktok
+      </a>
+    </div>
+  </div>
+</section>
