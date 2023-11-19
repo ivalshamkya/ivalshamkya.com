@@ -27,4 +27,9 @@ export default defineConfig({
     react(),
     tailwind(),
   ],
+  vite: {
+    ssr: {
+      noExternal: ["react-icons"],
+    },
+  },
 });
