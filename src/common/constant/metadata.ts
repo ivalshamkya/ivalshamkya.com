@@ -8,6 +8,7 @@ export const METADATA = {
     name: "Ival Shamkya",
     nickname: "Ival",
     url: "ivalshamkya.com",
+    isAvailable: true
   },
   openGraph: {
     url: "ivalshamkya.com",

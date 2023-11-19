@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 export default {
 	darkMode: ["class"],
 	content: [
@@ -15,6 +16,11 @@ export default {
 		  "2xl": "1400px",
 		},
 	  },
+	  textShadow: {
+        sm: '1px 2px var(--tw-shadow-color)',
+        DEFAULT: '2px 4px var(--tw-shadow-color)',
+        lg: '8px 16px var(--tw-shadow-color)',
+      },
 	  extend: {
 		fontFamily: {
 		  'inter': ['Inter', 'sans-serif'],
@@ -23,6 +29,9 @@ export default {
 		},
 		transitionDuration: {
 			'50': '50ms'
+		},
+		transitionProperty: {
+			'width': 'width'
 		},
 		colors: {
 		  border: "hsl(var(--border))",
@@ -107,5 +116,18 @@ export default {
 		},
 	  },
 	},
-	plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
+	plugins: [
+		require("tailwindcss-animate"), 
+		require('@tailwindcss/typography'),
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+			  {
+				'text-shadow': (value) => ({
+				  textShadow: value,
+				}),
+			  },
+			  { values: theme('textShadow') }
+			)
+		  }),
+	],
 }
