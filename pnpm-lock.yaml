@@ -1,19 +1,19 @@
 lockfileVersion: '6.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 dependencies:
   '@astrojs/check':
     specifier: ^0.3.1
-    version: 0.3.1(typescript@5.2.2)
+    version: 0.3.1
   '@astrojs/mdx':
     specifier: ^1.1.3
     version: 1.1.3(astro@3.4.3)
   '@astrojs/react':
     specifier: ^3.0.3
-    version: 3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
+    version: 3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)
   '@astrojs/rss':
     specifier: ^3.0.0
     version: 3.0.0
@@ -43,7 +43,10 @@ dependencies:
     version: 18.2.14
   astro:
     specifier: ^3.3.2
-    version: 3.4.3(sass@1.69.5)(typescript@5.2.2)
+    version: 3.4.3(sass@1.69.5)
+  astro-expressive-code:
+    specifier: ^0.27.0
+    version: 0.27.1(astro@3.4.3)
   astro-seo:
     specifier: ^0.8.0
     version: 0.8.0
@@ -100,17 +103,16 @@ packages:
       '@jridgewell/trace-mapping': 0.3.20
     dev: false
 
-  /@astrojs/check@0.3.1(typescript@5.2.2):
+  /@astrojs/check@0.3.1:
     resolution: {integrity: sha512-3LjEUvh7Z4v9NPokaqKMXQ0DwnSXfmtcyAuWVTjNt9yzjv54SxykobV5CTOB3TIko+Rqg59ejamJBxaJN6fvkw==}
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
-      '@astrojs/language-server': 2.5.2(typescript@5.2.2)
+      '@astrojs/language-server': 2.5.2
       chokidar: 3.5.3
       fast-glob: 3.3.1
       kleur: 4.1.5
-      typescript: 5.2.2
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
@@ -125,7 +127,7 @@ packages:
     resolution: {integrity: sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==}
     dev: false
 
-  /@astrojs/language-server@2.5.2(typescript@5.2.2):
+  /@astrojs/language-server@2.5.2:
     resolution: {integrity: sha512-O5SMzoQ65wSxA1KygreI9UJYmHpgt15bSYBxceHwqX7OCDM4Ek8mr6mZn45LGDtwM3dp1uup7kp8exfRPwIFbA==}
     hasBin: true
     peerDependencies:
@@ -139,7 +141,7 @@ packages:
     dependencies:
       '@astrojs/compiler': 2.2.2
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@volar/kit': 1.10.10(typescript@5.2.2)
+      '@volar/kit': 1.10.10
       '@volar/language-core': 1.10.10
       '@volar/language-server': 1.10.10
       '@volar/language-service': 1.10.10
@@ -165,7 +167,7 @@ packages:
       astro: ^3.3.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.4.3(sass@1.69.5)(typescript@5.2.2)
+      astro: 3.4.3(sass@1.69.5)
       github-slugger: 2.0.0
       import-meta-resolve: 3.1.1
       mdast-util-definitions: 6.0.0
@@ -192,7 +194,7 @@ packages:
       '@astrojs/markdown-remark': 3.3.0(astro@3.4.3)
       '@mdx-js/mdx': 2.3.0
       acorn: 8.11.2
-      astro: 3.4.3(sass@1.69.5)(typescript@5.2.2)
+      astro: 3.4.3(sass@1.69.5)
       es-module-lexer: 1.3.1
       estree-util-visit: 1.2.1
       github-slugger: 2.0.0
@@ -216,7 +218,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0):
+  /@astrojs/react@3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-v+qltrm5nfqqm8C5ymYDBxrGlvNouRr+iCLcUWvNX65abVz8GzUqquhPQjmCTDXphn1Qc558Uxzc4s79l02skw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -227,7 +229,7 @@ packages:
     dependencies:
       '@types/react': 18.2.34
       '@types/react-dom': 18.2.14
-      '@vitejs/plugin-react': 4.1.1(vite@4.5.0)
+      '@vitejs/plugin-react': 4.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       ultrahtml: 1.5.2
@@ -256,7 +258,7 @@ packages:
       astro: ^3.2.4
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 3.4.3(sass@1.69.5)(typescript@5.2.2)
+      astro: 3.4.3(sass@1.69.5)
       autoprefixer: 10.4.16(postcss@8.4.31)
       postcss: 8.4.31
       postcss-load-config: 4.0.1(postcss@8.4.31)
@@ -532,6 +534,11 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@ctrl/tinycolor@3.6.1:
+    resolution: {integrity: sha512-SITSV6aIXsuVNV3f3O0f2n/cgyEDWoSqtZMYiAmcsYHydcKrOz3gUxB/iXd/Qf08+IZX4KpgNbvUdMBmWz+kcA==}
+    engines: {node: '>=10'}
     dev: false
 
   /@emmetio/abbreviation@2.3.3:
@@ -959,6 +966,38 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@expressive-code/core@0.27.1:
+    resolution: {integrity: sha512-Ep6nAAXhNNMWRNyaFfSFnc3GjKa4Oms9jH7IC3/VCrXiRsI1+NodKv8NEP/XM1T+E8sYAZ9jfF2MIonRam4JMw==}
+    dependencies:
+      '@ctrl/tinycolor': 3.6.1
+      hast-util-to-html: 8.0.4
+      hastscript: 7.2.0
+      postcss: 8.4.31
+      postcss-nested: 6.0.1(postcss@8.4.31)
+    dev: false
+
+  /@expressive-code/plugin-frames@0.27.1:
+    resolution: {integrity: sha512-q8lXECgz5rzzqKNfBIM+BinG3yimh582KRiyzvUJtG3PX5AVeXdSyaUNhBt+gpKWG74WSBzzboWRsQgi3vUOYA==}
+    dependencies:
+      '@expressive-code/core': 0.27.1
+      hastscript: 7.2.0
+    dev: false
+
+  /@expressive-code/plugin-shiki@0.27.1:
+    resolution: {integrity: sha512-qDYg908ig+O6m1ZHRwGikUKYDOe2Boq5TtQrZzQd6kRk1O1jQDkklPyvGa/eDJPslsA1wk/2aP4ek5O4UNP9mQ==}
+    dependencies:
+      '@expressive-code/core': 0.27.1
+      shiki: 0.14.5
+    dev: false
+
+  /@expressive-code/plugin-text-markers@0.27.1:
+    resolution: {integrity: sha512-igqTQAF0qt2mKCUb4hjvUJKu8nJ6h0dwk40jZDnW7Djy7nUurJgK8+NcYjmyLbpQztwZ0zU5X913rKGnRYxASg==}
+    dependencies:
+      '@expressive-code/core': 0.27.1
+      hastscript: 7.2.0
+      unist-util-visit-parents: 5.1.3
+    dev: false
 
   /@floating-ui/core@1.5.0:
     resolution: {integrity: sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg==}
@@ -1575,7 +1614,7 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: false
 
-  /@vitejs/plugin-react@4.1.1(vite@4.5.0):
+  /@vitejs/plugin-react@4.1.1:
     resolution: {integrity: sha512-Jie2HERK+uh27e+ORXXwEP5h0Y2lS9T2PRGbfebiHGlwzDO0dEnd2aNtOR/qjBlPb1YgxwAONeblL1xqLikLag==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1586,19 +1625,17 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.2)
       '@types/babel__core': 7.20.3
       react-refresh: 0.14.0
-      vite: 4.5.0(sass@1.69.5)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@volar/kit@1.10.10(typescript@5.2.2):
+  /@volar/kit@1.10.10:
     resolution: {integrity: sha512-V2SyUPCPUhueqH8j5t48LJ0QsjExGSXzTv/XOdkUHV7hJ/ekyRGFqKxcfBtMq/nK6Tgu2G1ba+6u0d7e6wKcQw==}
     peerDependencies:
       typescript: '*'
     dependencies:
       '@volar/language-service': 1.10.10
       typesafe-path: 0.2.2
-      typescript: 5.2.2
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
     dev: false
@@ -1691,6 +1728,10 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
+  /ansi-sequence-parser@1.1.1:
+    resolution: {integrity: sha512-vJXt3yiaUL4UU546s3rPXlsry/RnM730G1+HkpKE012AN0sx1eOrxSu95oKDIonskeLTijMgqWZ3uDEe3NFvyg==}
+    dev: false
+
   /ansi-styles@3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
     engines: {node: '>=4'}
@@ -1742,11 +1783,20 @@ packages:
     hasBin: true
     dev: false
 
+  /astro-expressive-code@0.27.1(astro@3.4.3):
+    resolution: {integrity: sha512-2zfv9Vh42pRujEDP0ZFLNa0dj7KMm1Sr3g0bEDf1r03/hELPQWDxqHQIA5sYldvnx4DmQY1H3XnZP3Hn8baw/w==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      astro: 3.4.3(sass@1.69.5)
+      remark-expressive-code: 0.27.1
+    dev: false
+
   /astro-seo@0.8.0:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@3.4.3(sass@1.69.5)(typescript@5.2.2):
+  /astro@3.4.3(sass@1.69.5):
     resolution: {integrity: sha512-6zcONz2FjX6GaAy6Mysie4gT8rH5QCBXyPjkuYZKiPdV+sXmDpLm44J2MpQwA3mHb8YQ35L5O4nNg09d4luQ7g==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1801,7 +1851,7 @@ packages:
       shikiji: 0.6.12
       string-width: 6.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.0.0(typescript@5.2.2)
+      tsconfck: 3.0.0
       unist-util-visit: 4.1.2
       vfile: 5.3.7
       vite: 4.5.0(sass@1.69.5)
@@ -2412,6 +2462,15 @@ packages:
     dev: false
     optional: true
 
+  /expressive-code@0.27.1:
+    resolution: {integrity: sha512-Aw/XuJ1TLNezuoaFa2F9ydNO7I140sUVMZsic78UWgL8TlV5sy6WGXFoKspgQFLKop758BTXKQbHf3r7g4CrQA==}
+    dependencies:
+      '@expressive-code/core': 0.27.1
+      '@expressive-code/plugin-frames': 0.27.1
+      '@expressive-code/plugin-shiki': 0.27.1
+      '@expressive-code/plugin-text-markers': 0.27.1
+    dev: false
+
   /extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
     engines: {node: '>=0.10.0'}
@@ -2992,6 +3051,10 @@ packages:
 
   /jsonc-parser@2.3.1:
     resolution: {integrity: sha512-H8jvkz1O50L3dMZCsLqiuB2tA7muqbSg1AtGEkN0leAqGjsUzDJir3Zwr02BhqdcITPg3ei3mZ+HjMocAknhhg==}
+    dev: false
+
+  /jsonc-parser@3.2.0:
+    resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: false
 
   /kind-of@6.0.3:
@@ -4262,6 +4325,14 @@ packages:
       unified: 10.1.2
     dev: false
 
+  /remark-expressive-code@0.27.1:
+    resolution: {integrity: sha512-r/Eugd2pUBWyaRByWZ15x19O0bQGxn2JH6zT9+VAENSJqZmX+nPuJdHZtXF57EvaDc3wzX528kV81LjFmNwEFw==}
+    dependencies:
+      expressive-code: 0.27.1
+      hast-util-to-html: 8.0.4
+      unist-util-visit: 4.1.2
+    dev: false
+
   /remark-gfm@3.0.1:
     resolution: {integrity: sha512-lEFDoi2PICJyNrACFOfDD3JlLkuSbOa5Wd8EPt06HUdptv8Gn0bxYTdbU/XXQ3swAPkEaGxxPN9cbnMHvVu1Ig==}
     dependencies:
@@ -4472,6 +4543,15 @@ packages:
   /shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+    dev: false
+
+  /shiki@0.14.5:
+    resolution: {integrity: sha512-1gCAYOcmCFONmErGTrS1fjzJLA7MGZmKzrBNX7apqSwhyITJg2O102uFzXUeBxNnEkDA9vHIKLyeKq0V083vIw==}
+    dependencies:
+      ansi-sequence-parser: 1.1.1
+      jsonc-parser: 3.2.0
+      vscode-oniguruma: 1.7.0
+      vscode-textmate: 8.0.0
     dev: false
 
   /shikiji@0.6.12:
@@ -4798,7 +4878,7 @@ packages:
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  /tsconfck@3.0.0(typescript@5.2.2):
+  /tsconfck@3.0.0:
     resolution: {integrity: sha512-w3wnsIrJNi7avf4Zb0VjOoodoO0woEqGgZGQm+LHH9przdUI+XDKsWAXwxHA1DaRTjeuZNcregSzr7RaA8zG9A==}
     engines: {node: ^18 || >=20}
     hasBin: true
@@ -4807,8 +4887,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-    dependencies:
-      typescript: 5.2.2
     dev: false
 
   /tslib@2.6.2:
@@ -4836,12 +4914,6 @@ packages:
     resolution: {integrity: sha512-Rq6/q4O9iyqUdjvOoyas7x/Qf9nWUMeqpP3YeTaLA+uECgfy5wOhfOS+SW/+fZ/uI/ZcKaf+2/ZhFzXh8xfofQ==}
     dependencies:
       semver: 7.5.4
-    dev: false
-
-  /typescript@5.2.2:
-    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
-    engines: {node: '>=14.17'}
-    hasBin: true
     dev: false
 
   /ultrahtml@1.5.2:
@@ -5207,6 +5279,14 @@ packages:
 
   /vscode-nls@5.2.0:
     resolution: {integrity: sha512-RAaHx7B14ZU04EU31pT+rKz2/zSl7xMsfIZuo8pd+KZO6PXtQmpevpq3vxvWNcrGbdmhM/rr5Uw5Mz+NBfhVng==}
+    dev: false
+
+  /vscode-oniguruma@1.7.0:
+    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
+    dev: false
+
+  /vscode-textmate@8.0.0:
+    resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
     dev: false
 
   /vscode-uri@2.1.2:
