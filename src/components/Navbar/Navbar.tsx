@@ -1,3 +1,4 @@
+import React from "react";
 import { Fragment, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { dataNavbar } from "@/common/constant/navbarLink";

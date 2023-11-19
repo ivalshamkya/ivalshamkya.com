@@ -1,5 +1,5 @@
+import React from "react";
 import { STACKS } from "@/common/constant/stack";
-import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 import Marquee from "./Marquee";
 

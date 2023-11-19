@@ -1,5 +1,5 @@
-import { formatISODate } from "@/utils/formatDate";
 import React from "react";
+import { formatISODate } from "@/utils/formatDate";
 
 interface Blog {
   post: {

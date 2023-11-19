@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 import BlogList from "./BlogList";
