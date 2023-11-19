@@ -18,7 +18,7 @@ import {METADATA} from "@/common/constant/metadata";
           title: METADATA.creator + " - Frontend Engineer",
           type: "website",
           image:
-            METADATA.profile
+            METADATA.profile.img
         },
       }}
       extend={{
@@ -27,7 +27,7 @@ import {METADATA} from "@/common/constant/metadata";
           {
             name: "twitter:image",
             content:
-              METADATA.profile
+              METADATA.profile.img
           },
           {
             name: "twitter:title",
@@ -44,7 +44,7 @@ import {METADATA} from "@/common/constant/metadata";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta title={title} />
-    <link rel="icon" type="image/x-icon" href={METADATA.profile} />
+    <link rel="icon" type="image/x-icon" href={METADATA.profile.icon} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
