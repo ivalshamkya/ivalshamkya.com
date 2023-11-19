@@ -108,18 +108,18 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     </article>
   </main>
 
-  <div class="my-10">
+  <div class="my-10 px-5 md:px-1">
     <h1 class="mb-3 font-medium text-lg">Tags:</h1>
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-2">
     {tags.map(tag => (
-      <div class="py-1.5 px-2.5 text-xs text-center rounded-full font-medium border bg-zinc-200 dark:bg-zinc-700">
+      <div class="py-1.5 px-2.5 text-xs text-center whitespace-nowrap rounded-full font-medium border bg-zinc-200 dark:bg-zinc-700">
         {tag}  
       </div>
     ))}
     </div>
   </div>
 
-  <div class="my-10">
+  <div class="my-10 px-5 md:px-1">
     <div class="flex items-center whitespace-nowrap gap-2 mb-3 font-medium text-lg">
       More Article
       <div class="w-full h-[1px] bg-zinc-300"></div>
