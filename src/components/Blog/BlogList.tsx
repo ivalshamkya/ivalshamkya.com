@@ -19,8 +19,8 @@ const BlogList: React.FC<Blog> = ({ post, slug }) => {
             <p className="text-zinc-700 dark:text-zinc-400 text-sm line-clamp-2 mb-2 transition-all ease-in duration-200 dark:group-hover:text-zinc-200">{post.description}</p>
             <div className="flex flex-wrap items-center gap-2 my-1">
                 {
-                    post.tools && post.tools.map((tool: string) => (
-                        <div className="w-fit py-1.5 px-1.5 flex justify-center items-center space-x-2 backdrop-blur-sm drop-shadow-sm bg-white/10 dark:bg-[#212121] border border-slate-50 dark:border-white/5 rounded-full shadow dark:shadow-white/5 transition-all linear duration-300">
+                    post.tools && post.tools.map((tool: string, index) => (
+                        <div key={tool + index} className="w-fit py-1.5 px-1.5 flex justify-center items-center space-x-2 backdrop-blur-sm drop-shadow-sm bg-white/10 dark:bg-[#212121] border border-slate-50 dark:border-white/5 rounded-full shadow dark:shadow-white/5 transition-all linear duration-300">
                             <div className="w-4">{STACKS[tool]}</div>
                             <h1 className="whitespace-nowrap text-primary text-xs">{tool}</h1>
                         </div>
