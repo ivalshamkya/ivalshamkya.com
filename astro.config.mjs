@@ -20,7 +20,7 @@ const astroExpressiveCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ivalshamkya.com",
+  // site: "https://ivalshamkya.com",
   image: {
     service: sharpImageService()
   },
