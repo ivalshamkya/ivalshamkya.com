@@ -3,13 +3,12 @@ import { STACKS } from "@/common/constant/stack";
 import SkillCard from "./SkillCard";
 import Marquee from "./Marquee";
 
-const SkillList = () => {
+const SkillList:React.FC = () => {
   if (!STACKS) {
-    return null;
+    return "nothing";
   }
 
   const stacksInArray: Array<[string, JSX.Element]> = Object.entries(STACKS).sort(() => Math.random() - 0.5);
-
 
   return (
     <div className="space-y-2">

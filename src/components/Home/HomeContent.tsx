@@ -88,7 +88,7 @@ const HomeContent = () => {
             Here is a list of technologies that I have worked with.
           </p>
           <motion.div className="mb-4">
-            <SkillList />
+            {/* <SkillList /> */}
           </motion.div>
         </motion.div>
       </motion.div>

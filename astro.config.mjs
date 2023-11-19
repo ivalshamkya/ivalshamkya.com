@@ -5,6 +5,9 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import expressiveCode from "astro-expressive-code";
 import netlify from "@astrojs/netlify/functions";
+
+
+/** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
 const astroExpressiveCodeOptions = {
   // Example: Change the themes
   themes: ["slack-dark", "github-light"],
@@ -17,6 +20,7 @@ const astroExpressiveCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ivalshamkya.com",
   image: {
     service: sharpImageService()
   },
@@ -26,6 +30,6 @@ export default defineConfig({
       noExternal: ["react-icons"]
     }
   },
-  output: "server",
+  output: "static",
   adapter: netlify()
 });

@@ -6,10 +6,12 @@ interface MarqueeProps {
   children: React.ReactNode
 }
 
-export default function Marquee({ children, direction = 'left' }: MarqueeProps) {
+const Marquee:React.FC<MarqueeProps> = ({ children, direction = 'left' }) => {
   return (
     <MarQuee direction={direction} speed={30} className="py-2 h-auto">
       {children}
     </MarQuee>
   )
 }
+
+export default Marquee;
