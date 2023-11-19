@@ -30,6 +30,5 @@ export default defineConfig({
       noExternal: ["react-icons"]
     }
   },
-  output: "server",
   adapter: netlify()
 });
