@@ -20,7 +20,7 @@ const astroExpressiveCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  // site: "https://ivalshamkya.com",
+  site: "https://ivalshamkya.com",
   image: {
     service: sharpImageService()
   },
@@ -30,6 +30,6 @@ export default defineConfig({
       noExternal: ["react-icons"]
     }
   },
-  output: "static",
+  output: "server",
   adapter: netlify()
 });
