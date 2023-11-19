@@ -30,5 +30,4 @@ export default defineConfig({
       noExternal: ["react-icons"]
     }
   },
-  adapter: netlify()
 });
