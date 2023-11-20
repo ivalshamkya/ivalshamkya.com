@@ -81,16 +81,16 @@ const HomeContent = () => {
 
         </motion.div>
 
-        <motion.div className="overflow-hidden">
+        <div className="overflow-hidden">
           <h1 className="text-2xl font-bold mb-2">Favorite Things</h1>
           <p className="mb-4">
             I love exploring new libraries, frameworks and programing languages.
             Here is a list of technologies that I have worked with.
           </p>
-          <motion.div className="mb-4">
-            {/* <SkillList /> */}
-          </motion.div>
-        </motion.div>
+          <div className="mb-4">
+            <SkillList />
+          </div>
+        </div>
       </motion.div>
     </LazyMotion>
   );
