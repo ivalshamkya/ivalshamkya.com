@@ -27,7 +27,7 @@ export default defineConfig({
   integrations: [expressiveCode(astroExpressiveCodeOptions), mdx(), sitemap(), react(), tailwind()],
   vite: {
     ssr: {
-      noExternal: ["react-icons"]
-    }
+      noExternal: process.env.NODE_ENV === "production" ? ["react-icons", "react-fast-marquee"] : ["react-icons"]
+    },
   },
 });
