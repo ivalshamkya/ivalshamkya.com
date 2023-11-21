@@ -4,7 +4,7 @@ export const projects = [
       "stars": 0,
       "url": "https://github.com/ivalshamkya/ivalshamkya.com",
       "image": "/preview/ivalshamkya.com.jpeg",
-      "description": "My personal website lorem poi nartuo sasuke madara naruto sasaki uchiha madara madara naruto sasaki naruto sasaki kasuto goku bejia gugita yuopi kiouyu",
+      "description": "My personal website",
       "languages": [
         "TypeScript",
         "Astro.js",
