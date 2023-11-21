@@ -1,7 +1,62 @@
 ---
-import ProjectsContent from './ProjectsContent';
+import { projects } from "@/data/projects";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Project {
+  name: string;
+  description: string;
+  stars: number;
+  role: "author" | "contributor" | "maintainer";
+  url: string;
+  image: string;
+  languages: string[];
+}
+
+const openSourceContributions = projects as Project[];
+
+openSourceContributions.sort((a, b) => {
+  if (a.role === "maintainer" && b.role !== "maintainer") {
+    return -1;
+  }
+  if (a.role === "maintainer" && b.role === "maintainer") {
+    return a.stars > b.stars ? -1 : 1;
+  }
+  if (a.role === "author" && b.role === "author") {
+    return a.stars > b.stars ? -1 : 1;
+  }
+  if (a.role === "author" && b.role !== "author") {
+    return -1;
+  }
+  return 0;
+});
 ---
 
 <section id="projects" class="min-h-screen flex justify-center">
-    <ProjectsContent client:load />
+  <div class="max-w-3xl overflow-x-hidden space-y-12 md:space-y-14 px-6 py-4">
+    <div>
+      <h1 class="text-4xl font-bold mb-3">Projects</h1>
+    <p
+      class="max-w-prose mb-10 font-normal dark:text-zinc-400 text-zinc-600 leading-relaxed"
+    >
+      I love open source and I have been contributing to different projects for
+      the some time. Here is a list of projects that I have contributed to and
+      authored.
+    </p>
+    </div>
+  <ul class="grid grid-cols-1 gap-8">
+    {
+      openSourceContributions.map((project) => (
+        <ProjectCard
+          name={project.name}
+          description={project.description}
+          stars={project.stars}
+          role={project.role}
+          url={project.url}
+          image={project.image}
+          languages={project.languages}
+        />
+      ))
+    }
+  </ul>
+  </div>
 </section>
