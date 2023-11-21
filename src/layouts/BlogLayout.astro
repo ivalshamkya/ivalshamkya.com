@@ -54,11 +54,11 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
         ></a
       >
       <h1
-        class="text-2xl md:text-5xl pb-4 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3b52ff] to-pink-500"
+        class="text-3xl md:text-5xl pb-4 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3b52ff] to-pink-500"
       >
         {title}
       </h1>
-      <div class="inline-flex items-center space-x-1 mb-8">
+      <div class="inline-flex items-center space-x-1 mb-5 md:mb-8">
         <div class="inline-flex gap-2 justify-center items-center">
           <div class="aspect-square rounded-full overflow-hidden">
             <Image
@@ -102,7 +102,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
       )
     }
     <article
-      class="prose dark:prose-invert lg:prose-base dark:prose-code:text-zinc-50 dark:prose-a:text-blue-400 prose-a:text-blue-600 max-w-none hover:prose-a:underline focus:prose-a:underline prose-a:no-underline prose-headings:text-transparent prose-headings:bg-clip-text prose-headings:bg-gradient-to-l dark:prose-headings:bg-gradient-to-r prose-headings:from-[#3b52ff] prose-headings:to-pink-500 prose-img:rounded-xl"
+      class="prose dark:prose-invert prose-h1:prose-2xl prose-code:bg-blue-500/20  prose-code:rounded prose-code:p-0.5 lg:prose-lg dark:prose-code:text-zinc-50 dark:prose-a:text-blue-400 prose-a:text-blue-600 max-w-none hover:prose-a:underline focus:prose-a:underline prose-a:no-underline prose-headings:text-transparent prose-headings:bg-clip-text prose-headings:bg-gradient-to-l dark:prose-headings:bg-gradient-to-r prose-headings:from-[#3b52ff] prose-headings:to-pink-500 prose-img:rounded-xl"
     >
       <slot />
     </article>
