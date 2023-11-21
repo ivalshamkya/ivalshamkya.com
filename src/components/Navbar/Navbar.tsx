@@ -73,16 +73,17 @@ const Navbar: React.FC<Navigation> = ({ active }) => {
         <motion.div className={`h-fit flex items-center overflow-hidden ${ METADATA.authors.isAvailable && "md:-ml-40" } bg-white/70 dark:bg-[#212121] border border-gray-300 dark:border-white/20 backdrop-blur-sm shadow-inner hover:drop-shadow-lg transition-all duration-200 rounded-full`}>
           <motion.ul className="flex items-center">
             {dataNavbar.map(({ id, navigate, navigate_url, offset }) => (
-              <motion.a
-                href={`/${navigate_url}`}
+              <motion.li
                 key={`${navigate}`}
                 className={`w-[5rem] md:w-32 py-2 md:py-3 text-sm md:text-base text-center text-primary bg-gradient-to-r rounded-full transition-all ease-in duration-75 cursor-pointer ${active === navigate_url
                     ? "text-white from-[#3b52ff] to-[#aa00c0] font-bold"
                     : "text-primary hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#3b52ff] hover:to-[#aa00c0] font-medium"
                   }`}
               >
-                {navigate}
-              </motion.a>
+                <motion.a href={`/${navigate_url}`}>
+                  {navigate}
+                </motion.a> 
+              </motion.li>
             ))}
           </motion.ul>
         </motion.div>
