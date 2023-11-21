@@ -1,68 +1,48 @@
-# Astro Starter Kit: Blog
+# ivalshamkya.com
+Personal website, portfolio and blog built with AstroJs, Tailwind CSS, and Typescript.
 
-```sh
-npm create astro@latest -- --template blog
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/ivalshamkya/ivalshamkya.com?title=Personal%20website)
+
+![2472b4bbcuos25vftg6xlj3jji](https://github.com/ivalshamkya/ivalshamkya.com/assets/85030029/ee0bf2e9-040b-46ce-bd7b-71361b3ca4fd)
+
+## 🙌 Introduction
+
+Welcome to my personal website! This digital space is a reflection of my passion for web development, design, and technology. Here, I share my journey of crafting a seamless and engaging user experience using Astro.js, TypeScript, and Tailwind CSS.
+
+In the ever-evolving realm of web development, my personal website stands as a testament to the fusion of cutting-edge technologies. Built with Astro.js, TypeScript, and Tailwind CSS, this space embodies the seamless integration of server-side rendering (SSR) and client-side rendering (CSR), creating an optimal user experience.
+
+
+## Features
+
+### 📝 Blogs
+My personal collection of code snippets, starter guides, tutorials, and interesting things I found online.
+
+### 🎨 Projects
+My digital gallery, where I showcase a selection of awesome projects I've had the pleasure of working on.
+
+
+## 🚀 Getting Started 
+To begin, you need to follow the instructions
+
+**1. Clone using git**
+```zsh
+git clone https://github.com/ivalshamkya/ivalshamkya.com.git
+```
+**2. Install dependencies**
+```zsh
+pnpm install
+```
+**3. Start the dev server**
+```zsh
+pnpm dev 
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+The default port for the Astro development server is `4321`. This means that when you run the astro dev command, the development server will start up and listen for connections on port `4321`.
+Open http://localhost:4321 with your browser to see the result.
+<br><br><br>
+Feel free to explore the codebase, try out the projects, and don't hesitate to reach out if you have any questions or just want to chat about technology and development.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Contributing
+Contributions to this project are welcome and encouraged! If you find any bugs, want to add new features, or improve the existing ones, feel free to open issues and pull requests.
