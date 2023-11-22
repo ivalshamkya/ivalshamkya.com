@@ -1,34 +1,10 @@
 ---
-import { projects } from "@/data/projects";
+import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
 
-interface Project {
-  name: string;
-  description: string;
-  stars: number;
-  role: "author" | "contributor" | "maintainer";
-  url: string;
-  image: string;
-  languages: string[];
-}
-
-const openSourceContributions = projects as Project[];
-
-openSourceContributions.sort((a, b) => {
-  if (a.role === "maintainer" && b.role !== "maintainer") {
-    return -1;
-  }
-  if (a.role === "maintainer" && b.role === "maintainer") {
-    return a.stars > b.stars ? -1 : 1;
-  }
-  if (a.role === "author" && b.role === "author") {
-    return a.stars > b.stars ? -1 : 1;
-  }
-  if (a.role === "author" && b.role !== "author") {
-    return -1;
-  }
-  return 0;
-});
+const projectData = (await getCollection("projects")).sort(
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
+);
 ---
 
 <section id="projects" class="min-h-screen flex justify-center">
@@ -45,15 +21,15 @@ openSourceContributions.sort((a, b) => {
     </div>
   <ul class="grid grid-cols-1 gap-8">
     {
-      openSourceContributions.map((project) => (
+      projectData.length && projectData.map((project) => (
         <ProjectCard
-          name={project.name}
-          description={project.description}
-          stars={project.stars}
-          role={project.role}
-          url={project.url}
-          image={project.image}
-          languages={project.languages}
+          name={project.data.name}
+          description={project.data.description}
+          role={project.data.role}
+          url={project.data.url}
+          image={project.data.image}
+          languages={project.data.languages}
+          slug={project.slug}
         />
       ))
     }

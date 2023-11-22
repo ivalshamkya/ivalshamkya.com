@@ -1,0 +1,32 @@
+---
+import ProjectLayout from "@/layouts/ProjectLayout.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import "@/styles/globals.css";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("projects");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"projects">;
+
+const post = Astro.props;
+const frontmatter = post.data;
+const { Content } = await post.render();
+---
+
+<ProjectLayout
+  name={frontmatter.name}
+  publishedDate={frontmatter.publishedDate}
+  image={frontmatter.image}
+  imageAlt={frontmatter.imageAlt}
+  description={frontmatter.description}
+  url={post.slug}
+  languages={frontmatter.languages}
+>
+  <div>
+    <Content />
+  </div>
+</ProjectLayout>
