@@ -1,0 +1,80 @@
+---
+import Layout from "./Layout.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { METADATA } from "@/common/constant/metadata";
+import { formatISODate } from "@/utils/formatDate";
+import { BsChevronLeft } from "react-icons/bs";
+import Pagination from "@/components/Pagination/Pagination.astro";
+import ToolBadge from "@/components/Projects/ToolBadge";
+import { STACKS } from "@/common/constant/stack";
+
+interface Props {
+  name: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  publishedDate: Date;
+  url: string;
+  languages: [];
+}
+
+const { name, description, image, imageAlt, publishedDate, url, languages } =
+  Astro.props;
+
+const ogImage = {
+  src: `/image/${url}.png`,
+  alt: name,
+};
+---
+
+<Layout
+  title={name}
+  description={description}
+  ogImage={ogImage}
+  publishedDate={publishedDate}
+>
+  <main class="rounded mt-[15%] md:mt-[17%] px-5">
+    <header class="flex flex-col mb-8">
+      <a
+        href="/projects"
+        class="group w-fit inline-flex items-center font-medium mb-7 md:text-lg"
+        ><BsChevronLeft /><span
+          class="tracking-wide px-0 group-hover:underline group-hover:px-1 transition-all ease-linear duration-150">Back</span
+        ></a
+      >
+      <h1
+        class="text-xl md:text-3xl pb-2 font-bold"
+      >
+        {name}
+      </h1>
+      <p
+        class="text-sm md:text-base pb-2 text-zinc-600 dark:text-zinc-400"
+      >
+        { description }
+      </p>
+      <ul class="flex flex-wrap gap-2 mb-4">
+        {
+          languages.map((item) => (
+            <ToolBadge icon={STACKS[item]} name={item} />
+          ))
+        }
+        </ul>
+      <div class="group w-[1200] h-[630] overflow-hidden rounded-xl border dark:border-white/10">
+        <Image
+          src={image}
+          alt={imageAlt}
+          loading="eager"
+          class="group-hover:scale-[1.03] transition-all duration-700"
+          width={1200}
+          height={630}
+        />
+      </div>
+    </header>
+    <article
+      class="prose dark:prose-invert lg:prose-base dark:prose-code:text-zinc-50 dark:prose-a:text-blue-400 prose-a:text-blue-600 max-w-none hover:prose-a:underline focus:prose-a:underline prose-a:no-underline  prose-img:rounded-xl"
+    >
+      <slot />
+    </article>
+  </main>
+</Layout>
