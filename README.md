@@ -3,7 +3,7 @@ Personal website, portfolio and blog built with AstroJs, Tailwind CSS, and Types
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/ivalshamkya/ivalshamkya.com?title=Personal%20website)
 
-![2472b4bbcuos25vftg6xlj3jji](https://github.com/ivalshamkya/ivalshamkya.com/assets/85030029/ee0bf2e9-040b-46ce-bd7b-71361b3ca4fd)
+![129092-fj2093g302-203jg293](https://github.com/ivalshamkya/ivalshamkya.com/assets/85030029/9cf7fe04-1e98-4aa9-b86a-8c881f762d00)
 
 ## 🙌 Introduction
 
