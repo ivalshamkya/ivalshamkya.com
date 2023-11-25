@@ -4,7 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import expressiveCode from "astro-expressive-code";
-import netlify from "@astrojs/netlify/functions";
 
 
 /** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
