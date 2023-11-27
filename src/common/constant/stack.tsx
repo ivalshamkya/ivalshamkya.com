@@ -1,5 +1,4 @@
-import { BiLogoPostgresql, BiSolidPyramid } from "react-icons/bi";
-import { BsFillBootstrapFill } from "react-icons/bs";
+import { BiLogoPostgresql } from "react-icons/bi";
 import {
   SiChakraui,
   SiCodeigniter,
@@ -8,6 +7,7 @@ import {
   SiAstro,
   SiExpress,
   SiFirebase,
+  SiBootstrap,
   SiFlask,
   SiFramer,
   SiGithub,
@@ -34,6 +34,7 @@ import {
   SiTypescript,
   SiVite,
   SiVuedotjs,
+  SiStreamlit,
 } from "react-icons/si";
 
 type stacksProps = {
@@ -55,7 +56,7 @@ export const STACKS: stacksProps = {
   "Astro.js": <SiAstro size={iconSize} className="text-primary" />,
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
   Bootstrap: (
-    <BsFillBootstrapFill size={iconSize} className="text-purple-500" />
+    <SiBootstrap size={iconSize} className="text-purple-500" />
   ),
   GraphQL: <SiGraphql size={iconSize} className="text-pink-600" />,
   "Material UI": <SiMui size={iconSize} className="text-sky-400" />,
@@ -80,4 +81,5 @@ export const STACKS: stacksProps = {
   "Node JS": <SiNodedotjs size={iconSize} className="text-green-600" />,
   Github: <SiGithub size={iconSize} className="text-primary" />,
   Python: <SiPython size={iconSize} className="text-yellow-400" />,
+  Streamlit: <SiStreamlit size={iconSize} className="text-red-500" />,
 };
