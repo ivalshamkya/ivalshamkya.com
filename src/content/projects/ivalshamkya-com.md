@@ -2,6 +2,7 @@
 name: ivalshamkya.com
 description: Personal website, portfolio and blog built with AstroJs, Tailwind CSS, and Typescript.
 url: ivalshamkya.com
+github: https://github.com/ivalshamkya/ivalshamkya.com
 role: author
 publishedDate: 2023-11-20
 updatedDate: 2023-11-20

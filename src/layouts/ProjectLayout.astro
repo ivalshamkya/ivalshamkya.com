@@ -4,10 +4,12 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { METADATA } from "@/common/constant/metadata";
 import { formatISODate } from "@/utils/formatDate";
-import { BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft, BsPlayFill } from "react-icons/bs";
 import Pagination from "@/components/Pagination/Pagination.astro";
 import ToolBadge from "@/components/Projects/ToolBadge";
 import { STACKS } from "@/common/constant/stack";
+import { SiGithub } from "react-icons/si";
+import { BiPlay } from "react-icons/bi";
 
 interface Props {
   name: string;
@@ -16,10 +18,11 @@ interface Props {
   imageAlt: string;
   publishedDate: Date;
   url: string;
+  github: string;
   languages: [];
 }
 
-const { name, description, image, imageAlt, publishedDate, url, languages } =
+const { name, description, image, imageAlt, publishedDate, url, github, languages } =
   Astro.props;
 
 const ogImage = {
@@ -44,22 +47,29 @@ const ogImage = {
         ></a
       >
       <h1
-        class="text-xl md:text-3xl pb-2 font-bold"
+        class="text-3xl pb-2 font-bold"
       >
-        {name}
+        { name }
       </h1>
       <p
         class="text-sm md:text-base pb-2 text-zinc-600 dark:text-zinc-400"
       >
         { description }
       </p>
-      <ul class="flex flex-wrap gap-2 mb-4">
-        {
-          languages.map((item) => (
-            <ToolBadge icon={STACKS[item]} name={item} />
-          ))
-        }
+      <div class="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-dashed border-zinc-800 dark:border-gray-400">
+        <ul class="flex flex-wrap gap-2">
+          {
+            languages.map((item) => (
+              <ToolBadge icon={STACKS[item]} name={item} />
+            ))
+          }
         </ul>
+        <div class="flex items-center">
+          <a href={github}>
+            <ToolBadge icon={STACKS['Github']} name={""} />
+          </a>
+        </div>
+      </div>
       <div class="group w-[1200] h-[630] overflow-hidden rounded-xl border dark:border-white/10">
         <Image
           src={image}

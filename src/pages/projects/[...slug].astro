@@ -4,17 +4,17 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import "@/styles/globals.css";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("projects");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
   }));
 }
 type Props = CollectionEntry<"projects">;
 
-const post = Astro.props;
-const frontmatter = post.data;
-const { Content } = await post.render();
+const project = Astro.props;
+const frontmatter = project.data;
+const { Content } = await project.render();
 ---
 
 <ProjectLayout
@@ -23,8 +23,9 @@ const { Content } = await post.render();
   image={frontmatter.image}
   imageAlt={frontmatter.imageAlt}
   description={frontmatter.description}
-  url={post.slug}
+  url={frontmatter.url}
   languages={frontmatter.languages}
+  github={frontmatter.github}
 >
   <div>
     <Content />
