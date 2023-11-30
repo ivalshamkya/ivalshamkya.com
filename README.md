@@ -44,5 +44,11 @@ Feel free to explore the codebase, try out the projects, and don't hesitate to r
 
 ---
 
+## Roadmap
+> - [x] Projects
+> - [x] Blogs
+>> - [ ] Comments
+> - [x] Contact 
+
 ## Contributing
 Contributions to this project are welcome and encouraged! If you find any bugs, want to add new features, or improve the existing ones, feel free to open issues and pull requests.
