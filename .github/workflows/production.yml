@@ -10,20 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
-    - uses: actions/labeler@v2
-      with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Checkout
-    - uses: actions/checkout@v3
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - uses: pnpm/action-setup@v2
-      name: Install pnpm
-      id: pnpm-install
-      with:
-        version: 7
-        run_install: false
-    - name: "Deployed site"
-      run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
+      - uses: actions/labeler@v2
+        with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+      - name: "Deployed site"
+        run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
