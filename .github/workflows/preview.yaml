@@ -1,0 +1,16 @@
+name: Netlify Preview Deployment
+
+on:
+  pull_request:
+    branches:
+      - main
+    
+jobs:
+  Preview:
+    runs-on: ubuntu-latest
+    environment: Preview
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: "Deployed preview site"
+        run: curl -X POST -d {} ${{ secrets.NETLIFY_PREVIEW_BUILD_HOOK }}
