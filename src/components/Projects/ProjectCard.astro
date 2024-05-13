@@ -27,12 +27,12 @@ const { name, role, url, image, description, languages, slug } = Astro.props;
   class="relative dark:bg-zinc-800 bg-white dark:text-zinc-400 text-zinc-500 gap-1 p-5 border dark:border-zinc-700/60 rounded-lg flex flex-col"
 >
   <Badge text={role} color={colors[role]} />
-  <div class="flex gap-3">
+  <div class="flex flex-col md:flex-row gap-3">
     <Image
       src={`${image}`}
       alt={name}
       loading="eager"
-      class="object-cover w-[100px] md:w-[200px] group-hover:scale-[1.03] transition-all duration-700 rounded-lg"
+      class="object-cover w-full md:w-[275px] group-hover:scale-[1.03] transition-all duration-700 rounded-lg"
       width={200}
       height={200}
     />

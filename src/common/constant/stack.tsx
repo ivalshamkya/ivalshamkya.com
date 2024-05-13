@@ -58,7 +58,7 @@ export const STACKS: stacksProps = {
   Bootstrap: (
     <SiBootstrap size={iconSize} className="text-purple-500" />
   ),
-  GraphQL: <SiGraphql size={iconSize} className="text-pink-600" />,
+  // GraphQL: <SiGraphql size={iconSize} className="text-pink-600" />,
   "Material UI": <SiMui size={iconSize} className="text-sky-400" />,
   Vite: <SiVite size={iconSize} className="text-purple-500" />,
   PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-500" />,

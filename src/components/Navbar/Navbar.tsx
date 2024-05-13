@@ -50,7 +50,7 @@ const Navbar: React.FC<Navigation> = ({ active }) => {
         variants={navbarVariants}
         initial={"hidden"}
         animate={"visible"}
-        className="w-screen flex justify-between fixed top-5 md:top-7 right-0 left-0 px-4 md:px-7 z-50 -translate-x-1/2"
+        className="w-screen flex justify-between fixed top-5 md:top-7 right-0 left-0 px-1.5 md:px-7 z-50 -translate-x-1/2"
       >
         {METADATA.authors.isAvailable ? (
           <div className="hidden md:block w-44">
@@ -74,11 +74,11 @@ const Navbar: React.FC<Navigation> = ({ active }) => {
             METADATA.authors.isAvailable && "md:-ml-40"
           } bg-white/70 dark:bg-[#212121] border border-gray-300 dark:border-white/20 backdrop-blur-sm shadow-inner hover:drop-shadow-lg transition-all duration-200 rounded-full`}
         >
-          <motion.ul className="flex items-center">
+          <motion.ul className="overflow-auto flex items-center">
             {dataNavbar.map(({ id, navigate, navigate_url, offset }) => (
               <motion.li
                 key={`${navigate}`}
-                className={`w-[5rem] md:w-32 py-2 md:py-3 text-sm md:text-base text-center text-primary bg-gradient-to-r rounded-full transition-all ease-in duration-75 cursor-pointer ${
+                className={`w-[5rem] md:w-32 py-2 md:py-3 text-sm md:text-base text-center text-primary bg-gradient-to-r rounded-full transition-all ease-in duration-75 ${
                   active === navigate_url
                     ? "text-white from-[#3b52ff] to-[#aa00c0] font-bold"
                     : "text-primary hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#3b52ff] hover:to-[#aa00c0] font-medium"
